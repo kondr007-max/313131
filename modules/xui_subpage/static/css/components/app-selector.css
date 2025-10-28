@@ -1,0 +1,39 @@
+.app-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.app-option {
+    background: var(--bg-card);
+    border: 2px solid var(--border-secondary);
+    border-radius: var(--radius-md);
+    padding: 10px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.app-option:hover {
+    border-color: var(--accent-primary);
+    background: var(--bg-card-hover);
+}
+
+.app-option.active {
+    border-color: var(--accent-primary);
+    background: rgba(0, 180, 216, 0.1);
+    color: var(--accent-primary);
+}

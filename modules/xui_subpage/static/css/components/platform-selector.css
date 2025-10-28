@@ -1,0 +1,156 @@
+.platform-selector {
+    position: relative;
+}
+
+.platform-dropdown-custom {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.platform-selected {
+    height: 40px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    padding: 0 32px 0 40px;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.platform-selected:hover {
+    border-color: var(--accent-primary);
+    background: var(--bg-card-hover);
+}
+
+.platform-selected.active {
+    border-color: var(--accent-primary);
+}
+
+.platform-icon {
+    position: absolute;
+    left: 14px;
+    font-size: 16px;
+    color: var(--text-primary);
+    pointer-events: none;
+}
+
+.platform-name {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.platform-chevron {
+    position: absolute;
+    right: 16px;
+    font-size: 12px;
+    color: var(--text-muted);
+    pointer-events: none;
+    transition: transform 0.2s ease;
+}
+
+.platform-chevron.rotated {
+    transform: rotate(180deg);
+}
+
+.platform-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+}
+
+.platform-dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.platform-option {
+    padding: 12px 40px 12px 40px;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.platform-option:hover {
+    background: var(--bg-card-hover);
+    color: var(--accent-primary);
+}
+
+.platform-option:first-child {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.platform-option:last-child {
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.platform-option i {
+    position: absolute;
+    left: 14px;
+    font-size: 16px;
+    color: currentColor;
+}
+
+.platform-option span {
+    margin-left: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.platform-option.selected {
+    background: var(--accent-primary);
+    color: white;
+}
+
+@media (max-width: 480px) {
+    .platform-dropdown-custom {
+        width: 160px;
+        min-width: 160px;
+        max-width: 160px;
+    }
+
+    .platform-selected {
+        height: 36px;
+        font-size: 13px;
+    }
+
+    .platform-option {
+        font-size: 13px;
+        padding: 10px 36px 10px 36px;
+    }
+
+    .platform-option span {
+        margin-left: 4px;
+    }
+}
